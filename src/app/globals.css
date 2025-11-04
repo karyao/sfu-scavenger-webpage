@@ -1,26 +1,231 @@
 @import "tailwindcss";
 
+html { 
+  height: 100%;
+  width: 100%;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dark: #130303;
+  --cream: #fffaf4;
+  --orange: #d68057;
+  --red: #a6192e;
+  --beige: #d3c5bb;
+  --accent: #d68057;
+  --accent-hover: #a6192e;
+  --foreground: #130303;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
+  height: 100%;
+  background: var(--cream);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto), 'Roboto', Arial, Helvetica, sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0 0;        
+  margin: 0 auto;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--cream);
+}
+
+::-webkit-scrollbar {
+  width: 8px;       
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box; /* Ensures the transparent border is outside the colored area */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-hover);
+}
+
+h2 { 
+  font-family: var(--font-roboto), 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.875rem; 
+  text-align: center;
+  padding: 1.25rem;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(255, 250, 244, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(211, 197, 187, 0.3);
+  box-shadow: 0 2px 8px rgba(19, 3, 3, 0.1);
+}
+
+.logoLink {
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--dark);
+  padding: 8px;
+  transition: transform 0.2s ease;
+}
+
+.menuButton:hover {
+  transform: scale(1.1);
+}
+
+.menuButton:active {
+  transform: scale(0.95);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link {
+  padding: 8px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--dark);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: var(--orange);
+  background-color: rgba(214, 128, 87, 0.1);
+  transform: translateY(-1px);
+}
+
+.contact {
+  background-color: var(--orange);
+  border-radius: 10px;
+  padding: 10px 24px;
+  margin-left: 8px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(214, 128, 87, 0.3);
+}
+
+.contact:hover {
+  background-color: var(--red);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(166, 25, 46, 0.4);
+}
+
+.btn-primary {
+  background-color: var(--orange);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(166, 25, 46, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--beige);
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--orange);
+  color: white;
+}
+
+.diagram-link {
+  border-color: var(--beige);
+  color: var(--dark);
+  transition: all 0.3s ease;
+}
+
+.diagram-link:hover {
+  border-color: var(--orange);
+  background-color: rgba(214, 128, 87, 0.1);
+}
+
+/* ——— MOBILE ——— */
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+  }
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(255, 250, 244, 0.95);
+  }
+  .links.open {
+    display: flex;
+    border-bottom: 1px solid var(--beige);
+    box-shadow: 0 4px 6px rgba(19, 3, 3, 0.1);
+  }
+  .link {
+    padding: 14px 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  .link:hover {
+    background-color: rgba(214, 128, 87, 0.15);
+  }
+  .contact {
+    margin: 8px 0;
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: static;
+  }
 }
