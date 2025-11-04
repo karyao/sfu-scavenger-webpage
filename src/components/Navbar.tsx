@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <a href="#" className="logoLink">
-        <img src="/next.svg" alt="Logo" className="logo" />
+        <span className="logo">SS</span>
       </a>
       
       <button className="menuButton" onClick={toggleMenu}>

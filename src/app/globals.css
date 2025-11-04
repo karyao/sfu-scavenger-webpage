@@ -60,9 +60,9 @@ body {
 
 h2 { 
   font-family: var(--font-roboto), 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 1.875rem; 
+  font-size: 2rem; 
   text-align: center;
-  padding: 1.25rem;
+  padding-top: 4rem;
 }
 
 .nav {
@@ -93,8 +93,10 @@ h2 {
 }
 
 .logo {
-  width: 35px;
-  height: 35px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--red);
+  text-decoration: none;
 }
 
 .menuButton {
@@ -157,6 +159,11 @@ h2 {
 .btn-primary {
   background-color: var(--orange);
   color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
   transition: all 0.3s ease;
 }
 
@@ -167,8 +174,13 @@ h2 {
 }
 
 .btn-secondary {
-  background-color: var(--beige);
-  color: var(--dark);
+  background-color: var(--red);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
   transition: all 0.3s ease;
 }
 

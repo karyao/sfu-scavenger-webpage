@@ -1,0 +1,39 @@
+.diagrams {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diagrams-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.diagrams-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--dark);
+}
+
+.diagrams-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 2px solid var(--beige);
+  color: var(--dark);
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.diagrams-link:hover {
+  border-color: var(--orange);
+  background-color: rgba(214, 128, 87, 0.1);
+}
+

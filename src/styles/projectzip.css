@@ -1,0 +1,40 @@
+.projectzip {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectzip-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.projectzip-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--dark);
+}
+
+.projectzip-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--orange);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.projectzip-link:hover {
+  background-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(166, 25, 46, 0.4);
+}
+

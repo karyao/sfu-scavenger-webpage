@@ -1,0 +1,31 @@
+.pitch {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pitch-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.pitch-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: var(--dark);
+}
+
+.pitch-text {
+  line-height: 1.75;
+  font-size: 1.125rem;
+  margin: 0 auto;
+  color: var(--dark);
+  max-width: 100%;
+}
+
