@@ -8,21 +8,94 @@
 }
 
 .team-container {
-  max-width: 48rem;
+  max-width: 70rem;
   margin: 0 auto;
   padding: 0 2rem;
-  text-align: center;
+  text-align: left;
+  color: #5a3e2b;
+  font-family: "Inter", "Poppins", sans-serif;
+  line-height: 1.6;
 }
 
 .team-title {
-  font-size: 1.875rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: var(--dark);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #3b2a20;
+  text-align: center;
 }
 
-.team-placeholder {
-  color: var(--dark);
+.team-container p {
+  text-align: center;
+  color: #6b4a35;
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ===== GRID LAYOUT ===== */
+.team-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr; 
+  align-items: stretch; 
+}
+
+@media (min-width: 680px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1040px) {
+  .team-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+  padding: 1.5rem 1.25rem;
+  border-left: 4px solid #7b5242;
+  background-color: #f9f5f0;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+.team-member:hover {
+  background-color: #f3ebe4;
+  transform: translateY(-3px);
+}
+
+.team-member h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #5a3e2b;
+  margin-bottom: 0.6rem;
+}
+
+.team-member ul {
+  list-style: none;
+  padding-left: 1.2rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.team-member ul li {
+  position: relative;
+  margin-bottom: 0.4rem;
+  padding-left: 1rem;
   font-size: 1rem;
 }
 
+.team-member ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #7b5242;
+  font-size: 1.2rem;
+  line-height: 1;
+}
